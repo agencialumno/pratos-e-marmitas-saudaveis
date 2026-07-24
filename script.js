@@ -106,3 +106,20 @@ function toggleFaq(button) {
     answer.style.maxHeight = answer.scrollHeight + 'px';
   }
 }
+
+// ===== SUMÁRIO ACCORDION =====
+function toggleSumario(button) {
+  const item = button.parentElement;
+  const answer = button.nextElementSibling;
+  const isActive = item.classList.contains('active');
+
+  document.querySelectorAll('.sumario-item').forEach(el => {
+    el.classList.remove('active');
+    el.querySelector('.sumario-answer').style.maxHeight = null;
+  });
+
+  if (!isActive) {
+    item.classList.add('active');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
