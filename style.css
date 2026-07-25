@@ -318,11 +318,6 @@ body {
   .vip-text {
     font-size: 14px;
   }
-  .vip-names {
-    justify-content: flex-start;
-    border-top: none;
-    padding-top: 0;
-  }
   .vip-names span {
     border-right: none;
     margin: 0 8px 8px;
@@ -480,12 +475,12 @@ body {
 
 .vip-names {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0;
+  row-gap: 10px;
   padding-top: 20px;
   border-top: 1px solid var(--verde-claro);
-  overflow-x: auto;
+  justify-content: center;
 }
 
 .vip-names span {
@@ -549,10 +544,10 @@ body {
     font-size: 14px;
   }
   .vip-names {
-    justify-content: flex-start;
-    border-top: none;
-    padding-top: 0;
-  }
+  justify-content: center;
+  border-top: none;
+  padding-top: 0;
+}
   .vip-names span {
     border-right: none;
     margin: 0 8px 8px;
@@ -2018,7 +2013,7 @@ body {
     order: -1;
     grid-template-columns: 1fr;
   }
-  .whats-proof-card:nth-child(3) {
+  .whats-proof-card:last-child {
     grid-column: auto;
     width: 100%;
   }
@@ -2027,14 +2022,14 @@ body {
     padding: 13px 20px;
     white-space: nowrap;
   }
-  .whats-proof-card:nth-child(3) {
+  .whats-proof-card:last-child {
     grid-column: auto !important;
     width: 100% !important;
     justify-self: stretch !important;
   }
 }
 
-.whats-proof-card:nth-child(3) {
+.whats-proof-card:last-child {
   grid-column: 1 / 3;
   justify-self: center;
   width: 60%;
@@ -2206,4 +2201,26 @@ body {
   color: var(--verde-escuro);
   margin-top: 16px;
   margin-bottom: 6px;
+}
+
+.whats-proof-video {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.whats-proof-video {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.whats-proof-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: var(--grafite);
+  border: 2px solid var(--grafite);
+  border-radius: 12px;
+  display: block;
 }

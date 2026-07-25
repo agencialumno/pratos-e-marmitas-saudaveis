@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // ===== CARROSSEL DE PRATOS =====
 let carouselIndex = 0;
-const totalSlides = 15; // ajuste este número se usar menos de 15 fotos
+const totalSlides = 9; // ajuste este número se usar menos de 15 fotos
 let visibleSlides = window.innerWidth <= 768 ? 1 : 3;
 let carouselInterval;
 
