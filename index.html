@@ -139,23 +139,31 @@
       </p>
     </div>
 
-    <div class="vip-videos-row">
-      <div class="vip-video-col">
-        <video src="img/whatsapp/Camila Barros.mp4" controls playsinline></video>
-        <span class="vip-video-name">Camila Barros</span>
+    <div class="vip-videos-carousel">
+      <button class="carousel-arrow vip-video-prev" onclick="moveVipVideoCarousel(-1)" aria-label="Anterior">‹</button>
+
+      <div class="vip-videos-viewport">
+        <div class="vip-videos-track" id="vip-video-track">
+          <div class="vip-video-slide">
+            <video src="img/whatsapp/Camila Barros.mp4" controls playsinline></video>
+            <span class="vip-video-name">Camila Barros</span>
+          </div>
+          <div class="vip-video-slide">
+            <video src="img/whatsapp/Filipe ret e Agatha Sá.mp4" controls playsinline></video>
+            <span class="vip-video-name">Filipe Ret e Agatha Sá</span>
+          </div>
+          <div class="vip-video-slide">
+            <video src="img/whatsapp/Leda Nagle.mp4" controls playsinline></video>
+            <span class="vip-video-name">Leda Nagle</span>
+          </div>
+          <div class="vip-video-slide">
+            <video src="img/whatsapp/Viviane Araujo.mp4" controls playsinline></video>
+            <span class="vip-video-name">Viviane Araújo</span>
+          </div>
+        </div>
       </div>
-      <div class="vip-video-col">
-        <video src="img/whatsapp/Filipe ret e Agatha Sá.mp4" controls playsinline></video>
-        <span class="vip-video-name">Filipe Ret e Agatha Sá</span>
-      </div>
-      <div class="vip-video-col">
-        <video src="img/whatsapp/Leda Nagle.mp4" controls playsinline></video>
-        <span class="vip-video-name">Leda Nagle</span>
-      </div>
-      <div class="vip-video-col">
-        <video src="img/whatsapp/Viviane Araujo.mp4" controls playsinline></video>
-        <span class="vip-video-name">Viviane Araújo</span>
-      </div>
+
+      <button class="carousel-arrow vip-video-next" onclick="moveVipVideoCarousel(1)" aria-label="Próximo">›</button>
     </div>
   </section>
 

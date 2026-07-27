@@ -90,6 +90,37 @@ document.addEventListener('DOMContentLoaded', function () {
   resetAutoplay();
 });
 
+// ===== CARROSSEL DE VÍDEOS VIP (sem autoplay) =====
+let vipVideoIndex = 0;
+const totalVipVideoSlides = 4;
+let vipVideoVisibleSlides = window.innerWidth <= 768 ? 1 : 3;
+
+function updateVipVideoCarousel() {
+  const track = document.getElementById('vip-video-track');
+  if (!track) return;
+  const slideWidth = 100 / vipVideoVisibleSlides;
+  track.style.transform = `translateX(-${vipVideoIndex * slideWidth}%)`;
+}
+
+function moveVipVideoCarousel(direction) {
+  const maxIndex = Math.max(totalVipVideoSlides - vipVideoVisibleSlides, 0);
+  vipVideoIndex += direction;
+
+  if (vipVideoIndex > maxIndex) vipVideoIndex = 0;
+  if (vipVideoIndex < 0) vipVideoIndex = maxIndex;
+
+  updateVipVideoCarousel();
+}
+
+window.addEventListener('resize', function () {
+  vipVideoVisibleSlides = window.innerWidth <= 768 ? 1 : 3;
+  vipVideoIndex = 0;
+  updateVipVideoCarousel();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  updateVipVideoCarousel();
+});
 
 // ===== FAQ ACCORDION =====
 function toggleFaq(button) {
