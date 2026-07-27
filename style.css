@@ -297,35 +297,6 @@ body {
     grid-template-columns: 1fr;
     justify-items: stretch;
   }
-  .vip {
-    padding: 45px 20px;
-  }
-  .vip-container {
-    width: 100%;
-    max-width: 100%;
-  }
-  .vip-text-col {
-    width: 100%;
-  }
-  .vip-container {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-  }
-  .vip-title {
-    font-size: 22px;
-  }
-  .vip-text {
-    font-size: 14px;
-  }
-  .vip-names span {
-    border-right: none;
-    margin: 0 8px 8px;
-    padding-right: 0;
-  }
-  .vip-press-clip {
-    transform: rotate(-3deg);
-  }
    .usos {
     padding: 50px 20px;
   }
@@ -426,25 +397,55 @@ body {
     font-size: 13px;
   }
 }
-/* ===== SEÇÃO: PROVA SOCIAL VIP ===== */
-.vip {
-  background-color: var(--branco);
+/* ===== SEÇÃO: GALERIA DE FOTOS VIP ===== */
+.vip-gallery {
+  background-color: var(--bege);
   padding: 80px 24px;
 }
 
-.vip-container {
+.vip-gallery-container {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 70px;
+  gap: 60px;
 }
 
-.vip-text-col {
-  flex: 1.2;
+.vip-gallery-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.vip-tag {
+.vip-gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--grafite);
+}
+
+.vip-gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vip-gallery-wide {
+  aspect-ratio: 16 / 9;
+}
+
+.vip-gallery-square {
+  aspect-ratio: 1 / 1;
+}
+
+.vip-gallery-text {
+  flex: 1;
+  text-align: left;
+}
+
+.vip-tag,
+.vip-videos-header .vip-tag {
   display: inline-block;
   background-color: var(--verde);
   color: var(--branco);
@@ -454,6 +455,26 @@ body {
   padding: 6px 14px;
   border-radius: 20px;
   margin-bottom: 16px;
+  text-align: center;
+}
+
+.vip-videos .vip-title {
+  color: var(--branco);
+}
+
+.vip-videos .vip-text {
+  color: var(--branco);
+  opacity: 0.9;
+}
+
+
+.vip-videos-header {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .vip-title {
@@ -462,7 +483,7 @@ body {
   font-size: 28px;
   line-height: 1.3;
   color: var(--grafite);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .vip-text {
@@ -470,94 +491,83 @@ body {
   line-height: 1.7;
   color: var(--grafite);
   opacity: 0.8;
-  margin-bottom: 28px;
-}
-
-.vip-names {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  row-gap: 10px;
-  padding-top: 20px;
-  border-top: 1px solid var(--verde-claro);
-  justify-content: center;
-}
-
-.vip-names span {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--verde-escuro);
-  padding-right: 14px;
-  margin-right: 14px;
-  border-right: 1px solid #d5d5d5;
-  white-space: nowrap;
-}
-
-.vip-names span:last-child {
-  border-right: none;
-  padding-right: 0;
-  margin-right: 0;
-}
-
-.vip-press-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.vip-press-clip {
-  position: relative;
-  transform: rotate(-4deg);
-  background-color: var(--branco);
-  padding: 10px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-  border-radius: 4px;
-}
-
-.vip-press-clip img {
-  width: 100%;
-  max-width: 300px;
-  display: block;
-  border-radius: 2px;
-}
-
-.vip-press-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--grafite);
-  opacity: 0.75;
 }
 
 @media (max-width: 768px) {
-  .vip-container {
+  .vip-gallery {
+    padding: 45px 20px;
+  }
+  .vip-gallery-container {
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
+  }
+  .vip-gallery-grid {
+    gap: 12px;
+  }
+  .vip-gallery-text {
     text-align: center;
   }
-  .vip-title {
-    font-size: 22px;
-  }
-  .vip-text {
-    font-size: 14px;
-  }
-  .vip-names {
-  justify-content: center;
-  border-top: none;
-  padding-top: 0;
 }
-  .vip-names span {
-    border-right: none;
-    margin: 0 8px 8px;
-    padding-right: 0;
-  }
-  .vip-press-clip {
-    transform: rotate(-3deg);
-  }
+/* ===== SEÇÃO: VÍDEOS DE DEPOIMENTOS VIP ===== */
+.vip-videos {
+  background-color: var(--verde-escuro);
+  padding: 80px 24px;
 }
 
+.vip-videos-row {
+  max-width: 1100px;
+  margin: 60px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+.vip-video-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.vip-video-col video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border: 2px solid var(--grafite);
+  border-radius: 12px;
+  display: block;
+  background-color: var(--grafite);
+}
+
+.vip-video-name {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--grafite);
+  background-color: var(--rosa-claro);
+  border: 2px solid var(--verde);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .vip-videos {
+    padding: 45px 20px;
+  }
+  .vip-videos-row {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 28px;
+  }
+  .vip-video-col {
+    max-width: 280px;
+  }
+}
 /* ===== SEÇÃO: 3 USOS DO E-BOOK ===== */
 .usos {
   background-color: var(--verde-claro);
@@ -1766,16 +1776,6 @@ body {
 
 @media (max-width: 600px) {
 
-  /* --- Prova Social VIP --- */
-  .vip-press-clip {
-    padding: 8px;
-  }
-  .vip-press-clip img {
-    max-width: 220px;
-  }
-  .vip-press-label {
-    font-size: 12px;
-  }
 
   /* --- 3 Usos do E-book --- */
   .usos-btn {
@@ -1982,16 +1982,17 @@ body {
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-auto-rows: min-content;
   gap: 16px;
+  align-items: start;
 }
 
 .whats-proof-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
   border: 2px solid var(--grafite);
   border-radius: 12px;
-  display: block;
 }
 
 /* Mobile */
@@ -2029,13 +2030,34 @@ body {
   }
 }
 
-.whats-proof-card:last-child {
-  grid-column: 1 / 3;
-  justify-self: center;
-  width: 60%;
-}
 
 /* ===== SEÇÃO: SUMÁRIO DO LIVRO ===== */
+
+.sumario-recipes {
+  list-style: disc;
+  padding: 0 0 16px 64px;
+  margin: 0;
+}
+
+.sumario-recipes li {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--grafite);
+  opacity: 0.8;
+}
+
+.sumario-recipes li::marker {
+  color: var(--verde);
+}
+
+@media (max-width: 768px) {
+  .sumario-recipes {
+    padding-left: 56px;
+  }
+  .sumario-recipes li {
+    font-size: 12px;
+  }
+}
 .sumario {
   background-color: var(--branco);
   padding: 80px 24px;
@@ -2203,11 +2225,6 @@ body {
   margin-bottom: 6px;
 }
 
-.whats-proof-video {
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  border-radius: 12px;
-}
 
 .whats-proof-video {
   aspect-ratio: 16 / 9;

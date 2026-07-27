@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
   resetAutoplay();
 });
 
+
 // ===== FAQ ACCORDION =====
 function toggleFaq(button) {
   const item = button.parentElement;
