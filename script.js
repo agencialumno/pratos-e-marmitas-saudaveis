@@ -155,3 +155,28 @@ function toggleSumario(button) {
     answer.style.maxHeight = answer.scrollHeight + 'px';
   }
 }
+
+// === Meta Pixel: rastreamento de InitiateCheckout ===
+document.addEventListener('DOMContentLoaded', function () {
+  const botoesCompra = document.querySelectorAll('.btn-cta');
+
+  botoesCompra.forEach(function (botao) {
+    botao.addEventListener('click', function (e) {
+      // Só dispara o evento para links que vão pro checkout (Hotmart)
+      const destino = botao.getAttribute('href');
+      if (destino && destino.includes('pay.hotmart.com')) {
+
+        if (typeof fbq === 'function') {
+          fbq('track', 'InitiateCheckout');
+        }
+
+        // Pequeno delay pra garantir que o pixel dispare antes do redirecionamento,
+        // já que o link abre na mesma aba
+        e.preventDefault();
+        setTimeout(function () {
+          window.location.href = destino;
+        }, 150);
+      }
+    });
+  });
+});
