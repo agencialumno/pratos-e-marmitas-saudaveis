@@ -908,14 +908,22 @@ body {
 
 .price-bg {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
+  overflow: hidden;
 }
 
 .price-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -936,6 +944,221 @@ body {
   border-radius: 20px;
   padding: 32px 28px;
   text-align: center;
+}
+
+/* ===== SEÇÃO B: OFERTA (NOVA VERSÃO CLARA) ===== */
+.oferta-secao {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--verde-claro);
+  padding: 60px 24px 70px;
+}
+
+.oferta-secao-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+/* ---- coluna de bônus ---- */
+.oferta-grid {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.oferta-bonus-col-v2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.oferta-bonus-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--grafite);
+  margin-bottom: 4px;
+}
+
+.oferta-bonus-item-v2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--rosa-claro);
+  border: 2px solid var(--verde);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.oferta-bonus-item-v2 p {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--grafite);
+  line-height: 1.4;
+}
+
+/* ---- card de preço (versão clara) ---- */
+.oferta-price-card-v2 {
+  flex: 1;
+  background-color: var(--branco);
+  border: 2px solid var(--verde);
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.oferta-price-label-v2 {
+  font-size: 14px;
+  color: var(--grafite);
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.oferta-price-big-v2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 46px;
+  color: var(--verde-escuro);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.oferta-price-vista-v2 {
+  font-size: 14px;
+  color: var(--grafite);
+  opacity: 0.75;
+  margin-bottom: 22px;
+}
+
+.oferta-price-vista-v2 strong {
+  color: var(--grafite);
+}
+
+.oferta-price-card-v2 .btn-cta {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.oferta-mini-badges-v2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 16px;
+  margin-bottom: 20px;
+}
+
+.oferta-mini-badges-v2 span {
+  font-size: 11px;
+  color: var(--grafite);
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+.oferta-payment-icons-v2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 16px 0;
+  margin-bottom: 20px;
+  border-top: 1px solid var(--verde-claro);
+  border-bottom: 1px solid var(--verde-claro);
+}
+
+.payment-icon-v2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.payment-icon-v2 svg {
+  width: 24px;
+  height: 24px;
+  color: var(--verde-escuro);
+}
+
+.payment-icon-v2 span {
+  font-size: 10px;
+  color: var(--grafite);
+  opacity: 0.7;
+}
+
+.oferta-timer-label-v2 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--grafite);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.oferta-timer-boxes-v2 {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.timer-box-v2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--verde-claro);
+  border-radius: 10px;
+  padding: 10px 18px;
+  min-width: 60px;
+}
+
+.timer-box-v2 span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--verde-escuro);
+  line-height: 1;
+}
+
+.timer-box-v2 small {
+  font-size: 10px;
+  color: var(--grafite);
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+.oferta-warning-v2 {
+  font-size: 12px;
+  color: var(--grafite);
+  opacity: 0.6;
+  line-height: 1.5;
+}
+
+/* Mobile: bônus em cima, preço embaixo */
+@media (max-width: 900px) {
+  .oferta-secao {
+    padding: 45px 20px 50px;
+  }
+  .oferta-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .oferta-price-card-v2 {
+    padding: 26px 22px;
+  }
+  .oferta-price-big-v2 {
+    font-size: 38px;
+  }
 }
 
 .oferta-price-label {
