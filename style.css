@@ -1006,6 +1006,24 @@ body {
   line-height: 1.4;
 }
 
+.oferta-bonus-item-v2--destaque {
+  position: relative;
+  background-color: var(--verde-claro);
+  border-color: var(--verde-escuro);
+  border-width: 3px;
+}
+
+.oferta-bonus-badge {
+  flex-shrink: 0;
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
 /* ---- card de preço (versão clara) ---- */
 .oferta-price-card-v2 {
   flex: 1;
@@ -1017,6 +1035,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.oferta-price-anchor-v2 {
+  font-size: 14px;
+  color: var(--grafite);
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.oferta-price-anchor-v2 s {
+  opacity: 0.7;
 }
 
 .oferta-price-label-v2 {
@@ -2010,6 +2039,9 @@ body {
   .usos-btn {
     width: 100%;
     text-align: center;
+    font-size: 12px;
+    padding: 14px 16px;
+    white-space: nowrap;
   }
   .usos-card-text h3 {
     font-size: 14px;
@@ -2240,7 +2272,6 @@ body {
     font-size: 14px;
   }
   .whats-proof-grid {
-    order: -1;
     grid-template-columns: 1fr;
   }
   .whats-proof-card:last-child {
